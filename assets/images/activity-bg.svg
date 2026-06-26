@@ -1,0 +1,80 @@
+<svg width="1920" height="980" viewBox="0 0 1920 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1920" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091827"/>
+      <stop offset="0.44" stop-color="#0E2742"/>
+      <stop offset="1" stop-color="#07121F"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1320 392) rotate(90) scale(358 520)">
+      <stop stop-color="#38BDF8" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#0D80C0" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0D80C0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(685 498) rotate(90) scale(300 470)">
+      <stop stop-color="#AEEBFF" stop-opacity="0.35"/>
+      <stop offset="0.58" stop-color="#38BDF8" stop-opacity="0.1"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur" x="-200" y="-200" width="2320" height="1380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" stroke="#7DD3FC" stroke-opacity="0.08"/>
+    </pattern>
+    <pattern id="circuit" width="240" height="240" patternUnits="userSpaceOnUse">
+      <path d="M20 50H90V100H150V22H215M40 190H105V150H178M130 205V130H218M16 118H72M72 118V92" stroke="#AEEBFF" stroke-opacity="0.12" stroke-width="2"/>
+      <circle cx="90" cy="100" r="5" stroke="#AEEBFF" stroke-opacity="0.18" stroke-width="2"/>
+      <circle cx="150" cy="22" r="4" fill="#38BDF8" fill-opacity="0.2"/>
+      <circle cx="178" cy="150" r="4" fill="#AEEBFF" fill-opacity="0.18"/>
+    </pattern>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#9CE7FF" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="980" fill="url(#bg)"/>
+  <rect width="1920" height="980" fill="url(#grid)"/>
+  <rect width="1920" height="980" fill="url(#circuit)" opacity="0.8"/>
+  <rect width="1920" height="980" fill="url(#glow1)"/>
+  <rect width="1920" height="980" fill="url(#glow2)"/>
+
+  <g opacity="0.15" filter="url(#blur)">
+    <path d="M130 780C320 590 558 582 760 684C1004 807 1214 680 1378 482C1514 318 1708 230 1850 252" stroke="#67E8F9" stroke-width="12"/>
+    <path d="M-50 322C210 255 413 300 602 420C786 538 994 576 1230 506C1425 448 1656 442 1940 548" stroke="#0EA5E9" stroke-width="10"/>
+  </g>
+
+  <g opacity="0.32">
+    <path d="M320 256H640L715 332H910" stroke="url(#line)" stroke-width="2"/>
+    <path d="M850 690H1110L1190 610H1500" stroke="url(#line)" stroke-width="2"/>
+    <path d="M1120 255H1320L1410 345H1710" stroke="url(#line)" stroke-width="2"/>
+    <circle cx="715" cy="332" r="9" fill="#38BDF8"/>
+    <circle cx="1190" cy="610" r="8" fill="#AEEBFF"/>
+    <circle cx="1410" cy="345" r="8" fill="#38BDF8"/>
+  </g>
+
+  <g transform="translate(1045 245)" opacity="0.28">
+    <rect x="0" y="0" width="285" height="285" rx="34" fill="#0B1B2F" stroke="#9CE7FF" stroke-opacity="0.45" stroke-width="2"/>
+    <rect x="58" y="58" width="170" height="170" rx="18" fill="#0F2E4E" stroke="#38BDF8" stroke-opacity="0.5"/>
+    <path d="M-85 55H0M-85 115H0M-85 175H0M-85 235H0M285 55H372M285 115H372M285 175H372M285 235H372M55-76V0M115-76V0M175-76V0M235-76V0M55 285V362M115 285V362M175 285V362M235 285V362" stroke="#AEEBFF" stroke-opacity="0.5" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(270 350)" opacity="0.18">
+    <rect x="0" y="0" width="420" height="250" rx="26" fill="#FFFFFF" fill-opacity="0.04" stroke="#AEEBFF" stroke-opacity="0.35"/>
+    <path d="M42 70H350M42 124H300M42 178H360" stroke="#AEEBFF" stroke-opacity="0.42" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="360" cy="70" r="20" stroke="#38BDF8" stroke-opacity="0.5" stroke-width="6"/>
+  </g>
+
+  <g opacity="0.38">
+    <circle cx="560" cy="318" r="4" fill="#E0F7FF"/>
+    <circle cx="640" cy="438" r="5" fill="#38BDF8"/>
+    <circle cx="945" cy="622" r="4" fill="#E0F7FF"/>
+    <circle cx="1232" cy="458" r="7" fill="#AEEBFF"/>
+    <circle cx="1540" cy="300" r="4" fill="#38BDF8"/>
+    <circle cx="1720" cy="646" r="5" fill="#E0F7FF"/>
+  </g>
+
+  <text x="150" y="150" fill="#FFFFFF" fill-opacity="0.08" font-family="Arial, sans-serif" font-size="76" letter-spacing="12">FIELD OF ACTIVITY</text>
+  <rect width="1920" height="980" fill="#06111F" fill-opacity="0.3"/>
+</svg>

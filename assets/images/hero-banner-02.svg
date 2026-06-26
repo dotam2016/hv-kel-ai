@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Medical and healthcare connectivity concept</title>
+  <desc id="desc">High-density connector and medical data network visualization.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fcff"/>
+      <stop offset="0.55" stop-color="#d9f0fb"/>
+      <stop offset="1" stop-color="#10293a"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" x2="1">
+      <stop offset="0" stop-color="#e9f4f9"/>
+      <stop offset="0.48" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a9c3d3"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#ecfeff"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <circle cx="1480" cy="360" r="360" fill="#38bdf8" opacity="0.18" filter="url(#blur)"/>
+  <circle cx="330" cy="680" r="230" fill="#ffffff" opacity="0.36" filter="url(#blur)"/>
+  <g transform="translate(965 180) rotate(9)">
+    <rect x="0" y="180" width="540" height="330" rx="38" fill="url(#chip)" opacity="0.94"/>
+    <rect x="70" y="245" width="400" height="72" rx="16" fill="#c8dbe7" opacity="0.54"/>
+    <rect x="70" y="350" width="400" height="72" rx="16" fill="#c8dbe7" opacity="0.54"/>
+    <g stroke="#7ba9c2" stroke-width="14" stroke-linecap="round" opacity="0.42">
+      <path d="M-90 225h105"/><path d="M-90 275h105"/><path d="M-90 325h105"/><path d="M-90 375h105"/><path d="M-90 425h105"/>
+      <path d="M525 225h145"/><path d="M525 275h145"/><path d="M525 325h145"/><path d="M525 375h145"/><path d="M525 425h145"/>
+    </g>
+  </g>
+  <g stroke="url(#line)" stroke-width="8" stroke-linecap="round" fill="none" filter="url(#glow)">
+    <path d="M80 575 C250 575 250 505 380 505 S545 645 665 645 790 575 920 575 1010 520 1115 520"/>
+    <path d="M80 660 H360 C455 660 470 735 565 735 H960 C1065 735 1090 660 1190 660 H1780"/>
+    <path d="M320 430 H550 C680 430 705 350 845 350 H1800"/>
+  </g>
+  <g stroke="#0d80c0" stroke-width="2" fill="none" opacity="0.22">
+    <path d="M1230 760c70-110 250-115 330-20 95 112 250 78 310-35"/>
+    <path d="M1260 820c90-85 220-60 295 25 75 82 210 88 315 0"/>
+  </g>
+  <g fill="#38bdf8" opacity="0.75" filter="url(#glow)">
+    <circle cx="380" cy="505" r="6"/><circle cx="665" cy="645" r="6"/><circle cx="920" cy="575" r="6"/><circle cx="1115" cy="520" r="6"/>
+    <circle cx="550" cy="430" r="6"/><circle cx="845" cy="350" r="6"/><circle cx="1190" cy="660" r="6"/>
+  </g>
+</svg>

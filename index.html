@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ケル株式会社のコーポレートサイトリニューアル用HTMLプロトタイプ。製品情報、企業情報、活躍するフィールド、KELの強みへの導線を整理しています。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#0d80c0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="KEL Corporate Website Renewal Prototype" />
+    <meta property="og:description" content="ケル株式会社コーポレートサイトのリニューアルプロトタイプです。" />
+    <meta property="og:site_name" content="KEL" />
+
+    <title>KEL Corporate Website Renewal Prototype</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script>
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Noto Sans JP', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              primary: '#0d80c0',
+              secondary: '#1E293B',
+              tertiary: '#38BDF8',
+              neutral: '#F8FAFC',
+            },
+            maxWidth: {
+              container: '1280px',
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class="bg-white font-sans text-secondary antialiased">
+    <a class="skip-link" href="#main-content">本文へスキップ</a>
+
+    <header class="site-header" data-header>
+      <div class="site-header__inner">
+        <a href="./" class="site-logo" aria-label="KEL トップページ">KEL</a>
+
+        <nav class="site-nav" aria-label="グローバルナビゲーション">
+          <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="#products">製品情報</a></li>
+            <li><a class="site-nav__link" href="#company">企業情報</a></li>
+            <li><a class="site-nav__link" href="#none">投資家情報</a></li>
+            <li><a class="site-nav__link" href="#none">採用情報</a></li>
+            <li><a class="site-nav__link" href="#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-header__tools">
+          <form class="header-search" role="search" action="#none" aria-label="製品検索">
+            <label class="sr-only" for="product-search">製品検索</label>
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input id="product-search" type="search" name="keyword" placeholder="製品検索" autocomplete="off" />
+          </form>
+
+          <div class="language-selector" data-language-selector>
+            <button
+              class="header-icon-button"
+              type="button"
+              aria-label="言語を選択する"
+              aria-controls="language-menu"
+              aria-expanded="false"
+              data-language-button
+            >
+              <i data-lucide="globe-2" aria-hidden="true"></i>
+            </button>
+            <div id="language-menu" class="language-dropdown" role="menu" hidden data-language-menu>
+              <a href="#none" role="menuitem">Japanese</a>
+              <a href="#none" role="menuitem">English</a>
+              <a href="#none" role="menuitem">Deutsch</a>
+              <a href="#none" role="menuitem">Korean</a>
+              <a href="#none" role="menuitem">简体中文</a>
+              <a href="#none" role="menuitem">繁体中文</a>
+            </div>
+          </div>
+
+          <button
+            class="menu-button"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            data-menu-button
+          >
+            <span class="menu-button__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="site-dimmed" hidden data-menu-dimmed></div>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" hidden data-mobile-menu>
+      <div class="mobile-menu__head">
+        <a href="./" class="mobile-menu__logo" aria-label="KEL トップページ">KEL</a>
+        <button class="mobile-menu__close" type="button" aria-label="メニューを閉じる" data-menu-close>
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <form class="header-search header-search--mobile" role="search" action="#none" aria-label="製品検索">
+        <label class="sr-only" for="mobile-product-search">製品検索</label>
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input id="mobile-product-search" type="search" name="keyword" placeholder="製品検索" autocomplete="off" />
+      </form>
+      <ul class="mobile-menu__list">
+        <li><a class="mobile-menu__link" href="#products">製品情報</a></li>
+        <li><a class="mobile-menu__link" href="#company">企業情報</a></li>
+        <li><a class="mobile-menu__link" href="#none">投資家情報</a></li>
+        <li><a class="mobile-menu__link" href="#none">採用情報</a></li>
+        <li><a class="mobile-menu__link" href="#contact">お問い合わせ</a></li>
+      </ul>
+      <div class="mobile-menu__languages" aria-label="言語選択">
+        <p>Language</p>
+        <div>
+          <a href="#none">Japanese</a>
+          <a href="#none">English</a>
+          <a href="#none">Deutsch</a>
+          <a href="#none">Korean</a>
+          <a href="#none">简体中文</a>
+          <a href="#none">繁体中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero" aria-label="メインビジュアル">
+        <div class="swiper hero-slider" data-hero-slider>
+          <div class="swiper-wrapper">
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide__media" aria-hidden="true">
+                <img src="./assets/images/hero-banner-01.svg" alt="" loading="eager" />
+              </div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="hero-copy">
+                  <p class="hero-copy__kicker"><span></span> Next-gen connectivity</p>
+                  <h1 class="hero-copy__title">コネクタの先にある未来へ。</h1>
+                  <p class="hero-copy__text">
+                    1962年の創業以来、KELは産業界の神経系となる高信頼性コネクタを提供し続けてきました。最先端のAI、自動運転、医療機器の進化を、私たちの技術が繋いでいます。
+                  </p>
+                  <a class="btn-shine hero-copy__button" href="#none">
+                    詳しく見る
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide__media" aria-hidden="true">
+                <img src="./assets/images/hero-banner-02.svg" alt="" loading="lazy" />
+              </div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="hero-copy">
+                  <p class="hero-copy__kicker"><span></span> Medical & healthcare</p>
+                  <h2 class="hero-copy__title">医療の精度を、接続品質で支える。</h2>
+                  <p class="hero-copy__text">
+                    高密度・高信頼性が求められる医療機器やヘルスケア領域に、安定した接続ソリューションを提供します。
+                  </p>
+                  <a class="btn-shine hero-copy__button" href="#none">
+                    詳しく見る
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="swiper-slide hero-slide">
+              <div class="hero-slide__media" aria-hidden="true">
+                <img src="./assets/images/hero-banner-03.svg" alt="" loading="lazy" />
+              </div>
+              <div class="hero-slide__overlay" aria-hidden="true"></div>
+              <div class="hero-slide__content">
+                <div class="hero-copy">
+                  <p class="hero-copy__kicker"><span></span> Industrial automation</p>
+                  <h2 class="hero-copy__title">産業機器の進化を、確かな接続で前へ。</h2>
+                  <p class="hero-copy__text">
+                    FA・設備機器、インフラ、映像機器など、多様な現場で必要とされる接続性能を追求します。
+                  </p>
+                  <a class="btn-shine hero-copy__button" href="#none">
+                    詳しく見る
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="hero-slider__pagination swiper-pagination" aria-label="スライドページネーション"></div>
+        </div>
+
+        <a class="hero-scroll" href="#company" aria-label="下のコンテンツへスクロール">
+          <span>scroll</span>
+          <i data-lucide="arrow-down" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section id="company" class="corporate-overview" aria-labelledby="company-title">
+        <div class="container-base">
+          <div class="corporate-overview__head">
+            <div class="corporate-overview__title-block" data-aos="fade-up">
+              <p class="section-kicker corporate-overview__kicker">Corporate Overview</p>
+              <h2 id="company-title" class="corporate-overview__title">工業用コネクタの<br />リーディングカンパニー</h2>
+            </div>
+            <p class="corporate-overview__lead" data-aos="fade-up" data-aos-delay="120">
+              ケルは創業以来、コネクタ・ハーネス・ラックの事業メーカーとして、高信頼性が求められる産業機器分野で独自の地位を築いてきました。
+            </p>
+          </div>
+
+          <div class="overview-card-grid">
+            <article class="overview-card overview-card--founded" data-aos="fade-up" data-aos-delay="80">
+              <p class="overview-card__label">Founded</p>
+              <p class="overview-card__number"><span data-count-target="1962">1962</span></p>
+              <p class="overview-card__text">半世紀以上にわたる技術の蓄積と信頼。</p>
+            </article>
+
+            <article class="overview-card overview-card--blue" data-aos="fade-up" data-aos-delay="180">
+              <div class="overview-card__main">
+                <div>
+                  <p class="overview-card__label">Revenue&nbsp;&nbsp;FY2025</p>
+                  <p class="overview-card__number overview-card__number--large"><span data-count-target="118">118</span><span> 億円</span></p>
+                  <ul class="overview-card__tags" aria-label="対応分野">
+                    <li>産業機器</li>
+                    <li>医療</li>
+                    <li>車載</li>
+                    <li>映像</li>
+                    <li>インフラ</li>
+                  </ul>
+                </div>
+                <div class="overview-card__employees">
+                  <p class="overview-card__label">Employees</p>
+                  <p><span data-count-target="315">315</span><span> 名</span></p>
+                </div>
+              </div>
+              <div class="overview-gear" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="product-solutions" aria-labelledby="products-title">
+        <div class="container-base">
+          <div class="product-solutions__head" data-aos="fade-up">
+            <div>
+              <p class="section-kicker">Product Solutions</p>
+              <h2 id="products-title" class="product-solutions__title">製品ソリューション</h2>
+            </div>
+            <a class="product-solutions__link" href="#none">
+              製品一覧を見る
+              <i data-lucide="external-link" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <article class="product-visual" data-aos="fade-up" data-aos-delay="120">
+            <img src="./assets/images/product-solution-main.svg" alt="コネクタ、ハーネス、ラック製品を組み合わせた製品ソリューションのイメージ" loading="lazy" />
+            <div class="product-visual__copy">
+              <p>次世代の「繋ぐ」を形に</p>
+              <h3>高密度・高速伝送を支える最先端のコネクタソリューションを一覧に。</h3>
+            </div>
+          </article>
+
+          <div class="product-card-grid">
+            <a class="product-card" href="#none" data-aos="fade-up">
+              <div class="product-card__image">
+                <img src="./assets/images/product-connector.svg" alt="Connector 製品イメージ" loading="lazy" />
+                <span class="product-card__badge">Core</span>
+              </div>
+              <h3>Connector</h3>
+              <p>フローティング、ハーフピッチ、極細同軸など高精度なコネクタ群。</p>
+            </a>
+
+            <a class="product-card" href="#none" data-aos="fade-up" data-aos-delay="100">
+              <div class="product-card__image">
+                <img src="./assets/images/product-harness.svg" alt="Harness 製品イメージ" loading="lazy" />
+              </div>
+              <h3>Harness</h3>
+              <p>カスタムハーネス設計・製造。お客様の要求に合わせた最適解を。</p>
+            </a>
+
+            <a class="product-card" href="#none" data-aos="fade-up" data-aos-delay="200">
+              <div class="product-card__image">
+                <img src="./assets/images/product-rack.svg" alt="Rack 製品イメージ" loading="lazy" />
+              </div>
+              <h3>Rack</h3>
+              <p>19インチラック、バックプレーン。堅牢なハウジングソリューション。</p>
+            </a>
+
+            <a class="product-card" href="#none" data-aos="fade-up" data-aos-delay="300">
+              <div class="product-card__image">
+                <img src="./assets/images/product-others.svg" alt="Others 製品イメージ" loading="lazy" />
+              </div>
+              <h3>Others</h3>
+              <p>ICソケット、テストソケット、周辺パーツなど広範なラインナップ。</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="fields" class="activity-section" aria-labelledby="fields-title">
+        <div class="activity-section__shade" aria-hidden="true"></div>
+        <div class="activity-section__inner container-base">
+          <div class="activity-section__head" data-aos="fade-up">
+            <p class="section-kicker activity-section__kicker">Global Applications</p>
+            <h2 id="fields-title" class="activity-section__title">活躍するフィールド</h2>
+            <p class="activity-section__lead">ケルのテクノロジーは、あらゆる最先端領域で「繋ぐ」役割を果たしています。</p>
+          </div>
+
+          <ul class="field-card-grid" aria-label="活躍するフィールド">
+            <li data-aos="fade-up" data-aos-delay="80">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="bot" aria-hidden="true"></i></span>
+                <span>FA・設備機器</span>
+              </a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="130">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="train-front" aria-hidden="true"></i></span>
+                <span>インフラ・鉄道</span>
+              </a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="180">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="video" aria-hidden="true"></i></span>
+                <span>カメラ・映像</span>
+              </a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="230">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="briefcase-medical" aria-hidden="true"></i></span>
+                <span>医療・ヘルスケア</span>
+              </a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="280">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="car" aria-hidden="true"></i></span>
+                <span>自動車 / EV</span>
+              </a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="330">
+              <a class="field-card" href="#none">
+                <span class="field-card__icon"><i data-lucide="gamepad-2" aria-hidden="true"></i></span>
+                <span>アミューズメント</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="strength" class="strength-section" aria-labelledby="strength-title">
+        <div class="container-base strength-section__inner">
+          <div class="strength-section__copy" data-aos="fade-up">
+            <p class="section-kicker">K-Elements</p>
+            <h2 id="strength-title" class="strength-section__title">KELの強み<br /><span>K-Elements</span></h2>
+            <p class="strength-section__lead">
+              「繋ぐ」その一瞬に、私たちの誇りと技術が詰まっています。最高品質を届けるための3つの柱。
+            </p>
+            <a class="strength-section__movie" href="#none">
+              <span><i data-lucide="play" aria-hidden="true"></i></span>
+              コンセプトムービーを見る
+            </a>
+          </div>
+
+          <div class="strength-section__slider-wrap" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper strength-slider" data-strength-slider>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide strength-slide">
+                  <article class="strength-card">
+                    <span class="strength-card__pin" aria-hidden="true"></span>
+                    <div class="strength-card__icon"><i data-lucide="microscope" aria-hidden="true"></i></div>
+                    <h3>R&amp;D 技術開発</h3>
+                    <p>独自のシミュレーション技術と設計思想で、次世代のニーズを形にします。</p>
+                  </article>
+                </div>
+
+                <div class="swiper-slide strength-slide">
+                  <article class="strength-card">
+                    <span class="strength-card__pin" aria-hidden="true"></span>
+                    <div class="strength-card__icon"><i data-lucide="factory" aria-hidden="true"></i></div>
+                    <h3>Stable<br />Production</h3>
+                    <p>国内自社工場による徹底した品質管理と、安定した供給体制。</p>
+                  </article>
+                </div>
+
+                <div class="swiper-slide strength-slide">
+                  <article class="strength-card">
+                    <span class="strength-card__pin" aria-hidden="true"></span>
+                    <div class="strength-card__icon"><i data-lucide="headphones" aria-hidden="true"></i></div>
+                    <h3>Flexible<br />Response</h3>
+                    <p>お客様の課題に寄り添い、カスタマイズから一貫したサポートを提供します。</p>
+                  </article>
+                </div>
+              </div>
+              <div class="strength-slider__pagination swiper-pagination" aria-label="KELの強みスライドページネーション"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="knowledge" class="knowledge-section" aria-labelledby="knowledge-title">
+        <div class="container-base">
+          <div class="knowledge-section__head">
+            <div data-aos="fade-up">
+              <p class="section-kicker">Knowledge Center</p>
+              <h2 id="knowledge-title" class="knowledge-section__title">学ぶ・知る</h2>
+            </div>
+            <p class="knowledge-section__lead" data-aos="fade-up" data-aos-delay="100">
+              技術者による、技術者のためのコネクタ解説。設計に役立つナレッジを公開しています。
+            </p>
+          </div>
+
+          <div class="knowledge-card-grid" aria-label="技術ナレッジ一覧">
+            <a class="knowledge-card" href="#none" data-aos="fade-up">
+              <p class="knowledge-card__label">Tech Focus 01</p>
+              <h3>フローティングコネクタ</h3>
+              <p>ズレを吸収し、嵌合ミスを防止。自動組立に適した構造を解説。</p>
+            </a>
+            <a class="knowledge-card" href="#none" data-aos="fade-up" data-aos-delay="100">
+              <p class="knowledge-card__label">Tech Focus 02</p>
+              <h3>ハーフピッチコネクタ</h3>
+              <p>省スペース化と高密度実装を実現する、1.27mmピッチの極意。</p>
+            </a>
+            <a class="knowledge-card" href="#none" data-aos="fade-up" data-aos-delay="200">
+              <p class="knowledge-card__label">Tech Focus 03</p>
+              <h3>熱対策ソリューション</h3>
+              <p>高密度化による熱課題をどう解決するか。コネクタ視点のアプローチ。</p>
+            </a>
+            <a class="knowledge-card" href="#none" data-aos="fade-up" data-aos-delay="300">
+              <p class="knowledge-card__label">Tech Focus 04</p>
+              <h3>極細同軸コネクタ</h3>
+              <p>高速伝送と柔軟性を両立。映像・医療分野で選ばれる理由。</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="news-section" aria-labelledby="news-title">
+        <div class="container-base">
+          <div class="news-section__head">
+            <h2 id="news-title" class="news-section__title" data-aos="fade-up">ニュース</h2>
+            <div class="news-tabs" role="tablist" aria-label="ニュースカテゴリ" data-aos="fade-up" data-aos-delay="80">
+              <button class="news-tabs__button is-active" type="button" role="tab" aria-selected="true" data-news-tab="all">すべて</button>
+              <button class="news-tabs__button" type="button" role="tab" aria-selected="false" data-news-tab="product">製品</button>
+              <button class="news-tabs__button" type="button" role="tab" aria-selected="false" data-news-tab="ir">IR</button>
+              <button class="news-tabs__button" type="button" role="tab" aria-selected="false" data-news-tab="notice">お知らせ</button>
+            </div>
+          </div>
+
+          <div class="news-list" aria-live="polite" data-aos="fade-up" data-aos-delay="140">
+            <a class="news-item" href="#none" data-news-category="product">
+              <time datetime="2024-12-15">2024.12.15</time>
+              <span class="news-item__category">製品</span>
+              <span class="news-item__title">次世代AIサーバー向け高耐熱コネクタ「AXHシリーズ」をリリースしました。</span>
+              <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </a>
+            <a class="news-item" href="#none" data-news-category="ir">
+              <time datetime="2024-12-01">2024.12.01</time>
+              <span class="news-item__category">IR</span>
+              <span class="news-item__title">第63期 第2四半期報告書の提出に関するお知らせ。</span>
+              <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </a>
+            <a class="news-item" href="#none" data-news-category="notice">
+              <time datetime="2024-11-20">2024.11.20</time>
+              <span class="news-item__category">お知らせ</span>
+              <span class="news-item__title">「Semicon Japan 2024」出展のお知らせ（12月開催）。</span>
+              <i data-lucide="chevron-right" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="news-section__more" data-aos="fade-up" data-aos-delay="180">
+            <a class="btn-outline" href="#none">もっと見る</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contact" class="cta-panel-section" aria-labelledby="cta-panel-title">
+        <div class="cta-panel-section__shade" aria-hidden="true"></div>
+        <div class="container-base cta-panel-section__inner">
+          <h2 id="cta-panel-title" class="sr-only">採用・IR・代理店・お問い合わせへの導線</h2>
+          <div class="cta-panel-grid">
+            <a class="cta-panel-card" href="#none" data-aos="fade-up" data-aos-delay="60">
+              <div class="cta-panel-card__icon"><i data-lucide="users" aria-hidden="true"></i></div>
+              <h3>採用情報</h3>
+              <p>未来を繋ぐエンジニアとして、あなたの情熱をKELで形にしませんか。</p>
+              <span class="cta-panel-card__link">RECRUIT INFO <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
+            </a>
+
+            <a class="cta-panel-card" href="#none" data-aos="fade-up" data-aos-delay="120">
+              <div class="cta-panel-card__icon"><i data-lucide="chart-column" aria-hidden="true"></i></div>
+              <h3>IR情報</h3>
+              <p>株主・投資家の皆様へ。最新の財務情報と経営戦略を公開しています。</p>
+              <span class="cta-panel-card__link">INVESTOR RELATIONS <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
+            </a>
+
+            <a class="cta-panel-card" href="#none" data-aos="fade-up" data-aos-delay="180">
+              <div class="cta-panel-card__icon"><i data-lucide="store" aria-hidden="true"></i></div>
+              <h3>代理店一覧</h3>
+              <p>国内・海外の主要な販売代理店ネットワークをご紹介します。</p>
+              <span class="cta-panel-card__link">NETWORK <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
+            </a>
+
+            <a class="cta-panel-card cta-panel-card--contact" href="#none" data-aos="fade-up" data-aos-delay="240">
+              <div class="cta-panel-card__icon"><i data-lucide="mail" aria-hidden="true"></i></div>
+              <h3>お問い合わせ</h3>
+              <p>製品選定、カスタム対応、サンプル請求などお気軽にご相談ください。</p>
+              <span class="cta-panel-card__link">CONTACT US <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer id="footer-info" class="site-footer" aria-labelledby="footer-title">
+      <h2 id="footer-title" class="sr-only">フッター情報</h2>
+      <div class="site-footer__main">
+        <div class="site-footer__brand" data-aos="fade-up">
+          <a href="./" class="site-footer__logo" aria-label="KEL トップページ">KEL</a>
+          <address class="site-footer__address">
+            〒206-0025 東京都多摩市永山6-17-7<br />
+            TEL: <a href="tel:0423745802">042-374-5802</a>
+          </address>
+          <div class="site-footer__social" aria-label="ソーシャルリンク">
+            <a href="#none" aria-label="共有する"><i data-lucide="share-2" aria-hidden="true"></i></a>
+            <a href="#none" aria-label="動画を見る"><i data-lucide="video" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="製品について" data-aos="fade-up">
+          <h3>製品について</h3>
+          <ul>
+            <li><a href="#none">製品検索</a></li>
+            <li><a href="#none">製品カタログ</a></li>
+            <li><a href="#none">技術情報</a></li>
+            <li><a href="#none">カスタム対応</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__nav" aria-label="企業について" data-aos="fade-up">
+          <h3>企業について</h3>
+          <ul>
+            <li><a href="#none">会社概要</a></li>
+            <li><a href="#none">沿革</a></li>
+            <li><a href="#none">環境への取り組み</a></li>
+            <li><a href="#none">サステナビリティ</a></li>
+          </ul>
+        </nav>
+
+        <section class="site-footer__newsletter" aria-labelledby="newsletter-title" data-aos="fade-up">
+          <h3 id="newsletter-title">ニュースレター</h3>
+          <p>新製品情報や展示会のお知らせをいち早くお届けします。</p>
+          <form action="#none" class="newsletter-form">
+            <label class="sr-only" for="newsletter-email">メールアドレス</label>
+            <input id="newsletter-email" type="email" placeholder="メールアドレス" autocomplete="email" />
+            <button class="btn-shine" type="submit">登録</button>
+          </form>
+        </section>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2024 KEL CORPORATION. All Rights Reserved.</p>
+        <nav aria-label="フッターサブナビゲーション">
+          <ul>
+            <li><a href="#none">Privacy Policy</a></li>
+            <li><a href="#none">Terms of Use</a></li>
+            <li><a href="#none">Sitemap</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+
+    <button class="back-to-top" type="button" aria-label="ページトップへ戻る" data-back-to-top>
+      <i data-lucide="chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
